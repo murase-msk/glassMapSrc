@@ -292,38 +292,45 @@ public class PaintGlueRoad {
         }
 	        
 		for(ArrayList<Point2D> whiteLine: whitePath){
-			paintPath(whiteLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(189,189,188));// 枠.
-			paintPath(whiteLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(255,255,255));// 中の線.
+			paintPath(whiteLine, 4, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(189,189,188));// 枠.
+			paintPath(whiteLine, 3, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(255,255,255));// 中の線.
 		}
+		// 2車線道路.
 		for(ArrayList<Point2D>yellowLine: yellowPath){
-			paintPath(yellowLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(153,153,0));
-			paintPath(yellowLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(248,248,186));
+			paintPath(yellowLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(189,189,188));
+			paintPath(yellowLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(255,255,255));
 		}
+		//.
 		for(ArrayList<Point2D>orangeLine: orangePath){
 			paintPath(orangeLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(204,102,0));
 			paintPath(orangeLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(248,214,170));
 		}
+		// 地方主要道.
 		for(ArrayList<Point2D>redLine: redPath){
 			paintPath(redLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(211,147,148));
-			paintPath(redLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(220,158,158));
+			paintPath(redLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(252,214,164));
 		}
+		// 国道.
 		for(ArrayList<Point2D>greenLine: greenPath){
-			paintPath(greenLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(0,153,0));
-			paintPath(greenLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(148,211,148));
+			paintPath(greenLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(213,115,89));
+			paintPath(greenLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(248,177,156));
 		}
+		// 路線.
 		for(ArrayList<Point2D>railLine: railPath){
 			float[] dash = { 12.f, 12.f };
 			paintPath(railLine, 4, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(140,140,140));
 			paintPath(railLine, 2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(255,255,255));
 			paintPath(railLine, 2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(140, 140, 140), (float) 1., dash, (float) 0.);
 		}
+		// 地下鉄.
 		for(ArrayList<Point2D>subwayLine: subwayPath){
 			float[] dash = { 6.f, 6.f };
 			paintPath(subwayLine, 2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(153, 153, 153), (float) 1., dash, (float) 0.);
 		}
+		// 高速道路.
 		for(ArrayList<Point2D>blueLine: bluePath){
-			paintPath(blueLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(40,40,40));
-			paintPath(blueLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(137,163,202));
+			paintPath(blueLine, mainRoadEdge, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, new Color(0,0,0));
+			paintPath(blueLine, mainRoadIn, BasicStroke.JOIN_ROUND, BasicStroke.JOIN_ROUND, new Color(231,146,162));
 		}
 	}
 	
